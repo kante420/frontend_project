@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.esii.eat.booking.frontend.Graphic_Interface">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="10" column-count="9" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="832" height="346"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="ecbc9" class="javax.swing.JLabel" binding="stablishment_select_label">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Select an stablishment:"/>
+        </properties>
+      </component>
+      <hspacer id="7464a">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="15" height="-1"/>
+          </grid>
+        </constraints>
+      </hspacer>
+      <hspacer id="b4000">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="15" height="-1"/>
+          </grid>
+        </constraints>
+      </hspacer>
+      <component id="37f24" class="javax.swing.JComboBox" binding="restaurantComboBox">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <model>
+            <item value="Restaurant 1"/>
+            <item value="Restaurant 2"/>
+            <item value="Restaurant 3"/>
+            <item value="Restaurant 4"/>
+            <item value="Restaurant 5"/>
+          </model>
+        </properties>
+      </component>
+      <component id="d9745" class="javax.swing.JLabel" binding="number_dinners_label">
+        <constraints>
+          <grid row="4" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Insert number of dinners:"/>
+        </properties>
+      </component>
+      <component id="4723f" class="javax.swing.JTextField" binding="dinersCountTextField">
+        <constraints>
+          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="458e1" class="javax.swing.JButton" binding="checkButton" default-binding="true">
+        <constraints>
+          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Check"/>
+        </properties>
+      </component>
+      <hspacer id="cc57d">
+        <constraints>
+          <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="15" height="-1"/>
+          </grid>
+        </constraints>
+      </hspacer>
+      <component id="67b8b" class="javax.swing.JLabel" binding="suggested_table_label">
+        <constraints>
+          <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Table suggested by the system:"/>
+        </properties>
+      </component>
+      <component id="c42e8" class="javax.swing.JTextArea" binding="suggestedTablesTextArea">
+        <constraints>
+          <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="ce468" class="javax.swing.JTextField" binding="nameTextField">
+        <constraints>
+          <grid row="5" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="8d374" class="javax.swing.JLabel" binding="client_name_label">
+        <constraints>
+          <grid row="4" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Client´s name:"/>
+        </properties>
+      </component>
+      <hspacer id="234d">
+        <constraints>
+          <grid row="1" column="7" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <component id="fa12c" class="javax.swing.JButton" binding="reserveButton">
+        <constraints>
+          <grid row="6" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Book"/>
+        </properties>
+      </component>
+      <component id="401b4" class="javax.swing.JButton" binding="searchAlternativeButton" default-binding="true">
+        <constraints>
+          <grid row="7" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Search alternative"/>
+        </properties>
+      </component>
+      <component id="49fb6" class="javax.swing.JLabel" binding="noTablesAvailableLabel">
+        <constraints>
+          <grid row="8" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="No tables available in our Chain!"/>
+        </properties>
+      </component>
+      <component id="5ba5f" class="javax.swing.JLabel" binding="tables_restaurant_label">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Tables:"/>
+        </properties>
+      </component>
+      <vspacer id="9d2b9">
+        <constraints>
+          <grid row="9" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="15"/>
+          </grid>
+        </constraints>
+      </vspacer>
+      <hspacer id="17e8b">
+        <constraints>
+          <grid row="5" column="8" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="15" height="-1"/>
+          </grid>
+        </constraints>
+      </hspacer>
+      <hspacer id="7deea">
+        <constraints>
+          <grid row="5" column="6" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="15" height="-1"/>
+          </grid>
+        </constraints>
+      </hspacer>
+      <hspacer id="9a8a5">
+        <constraints>
+          <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="55" height="-1"/>
+          </grid>
+        </constraints>
+      </hspacer>
+      <component id="7e8b" class="javax.swing.JTextArea" binding="restaurantTableTextArea">
+        <constraints>
+          <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="5b742" class="javax.swing.JLabel" binding="table_booked_message">
+        <constraints>
+          <grid row="5" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Table(s) booked!"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
