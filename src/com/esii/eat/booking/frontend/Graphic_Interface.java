@@ -15,12 +15,6 @@ import javax.swing.*;
  * </p>
  */
 public class Graphic_Interface extends JFrame {
-    private JLabel stablishment_select_label;
-    private JLabel number_dinners_label;
-    private JLabel suggested_table_label;
-    private JLabel client_name_label;
-    private JLabel tables_restaurant_label;
-    private JLabel table_booked_message;
 
     /** Combo box for selecting a restaurant from the chain. */
     private JComboBox<String> restaurantComboBox;
@@ -51,6 +45,11 @@ public class Graphic_Interface extends JFrame {
 
     /** Label to display a message when no tables are available. */
     private JLabel noTablesAvailableLabel;
+    private JLabel stablishment_select_label;
+    private JLabel number_dinners_label;
+    private JLabel suggested_table_label;
+    private JLabel client_name_label;
+    private JLabel tables_restaurant_label;
 
     /** The restaurant chain managing all restaurants. */
     private Chain gourmetChain;
@@ -150,6 +149,7 @@ public class Graphic_Interface extends JFrame {
                 restaurantTableTextArea.setText(restaurant.toString());
             }
         }
+
         // TODO: Implement table display update
     }
 
@@ -173,7 +173,7 @@ public class Graphic_Interface extends JFrame {
                 noTablesAvailableLabel.setVisible(true);
                 searchAlternativeButton.setEnabled(true);
             }
-        } catch (NumberFormatException ex) {
+        } catch (NumberFormatException ex) { //En el caso de que el usuario no haya metido números en el campo de personas, saltaría la excepción
             JOptionPane.showMessageDialog(null, "Please enter a valid number of diners.");
         }
     }
@@ -187,8 +187,8 @@ public class Graphic_Interface extends JFrame {
         String selectedRestaurant = (String) restaurantComboBox.getSelectedItem();
         String reservationName = nameTextField.getText();
 
-        boolean reservationSuccess = gourmetChain.reserveRestaurant(numberOfPeople, selectedRestaurant, reservationName);
-        if (reservationSuccess) {
+        boolean reservationSuccessful = gourmetChain.reserveRestaurant(numberOfPeople, selectedRestaurant, reservationName);
+        if (reservationSuccessful) {
             JOptionPane.showMessageDialog(null, "Reservation successful!");
             resetForm();
         } else {
@@ -201,14 +201,46 @@ public class Graphic_Interface extends JFrame {
      * If an alternative is found, it prompts the user to confirm the reservation.
      */
     private void searchAlternativeRestaurant() {
-        if(dinersCountTextField.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Please enter a valid number of diners.");
-            return;
+        // Asegúrate de tener estos datos previamente definidos o capturados en la GUI
+        String restaurantName = (String) restaurantComboBox.getSelectedItem(); // por ejemplo, recogido de un comboBox o campo de texto
+        String reservationName = (String) nameTextField.getText();   // por ejemplo, recogido de un campo de texto
+        int numberOfPeople = Integer.parseInt(dinersCountTextField.getText());;        // por ejemplo, recogido de un spinner o campo de texto
+
+        // Buscar restaurante alternativo
+        Restaurant alternative = gourmetChain.searchRestaurant(numberOfPeople, restaurantName);
+
+        if (alternative != null) {
+            // Preguntar al usuario si desea reservar en el restaurante alternativo
+            int response = JOptionPane.showConfirmDialog(null, "The selected restaurant is full\n" + "¿Do you want to reserve in the alternative one \"" + alternative.getName() + "\"?",
+                    "Alternative restaurant found", JOptionPane.YES_NO_OPTION);
+
+            if (response == JOptionPane.YES_OPTION) {
+                boolean reserved = gourmetChain.reserveRestaurant(numberOfPeople, alternative.getName(), reservationName);
+                if (reserved) {
+                    JOptionPane.showMessageDialog(
+                            null,
+                            "Confirmed resevation in: \"" + alternative.getName() + "\"",
+                            "Confirmed reservation",
+                            JOptionPane.INFORMATION_MESSAGE
+                    );
+                } else {
+                    JOptionPane.showMessageDialog(
+                            null,
+                            "The reservation cannot be done.",
+                            "Error",
+                            JOptionPane.ERROR_MESSAGE
+                    );
+                }
+            }
+        } else {
+            // No hay restaurantes alternativos disponibles
+            JOptionPane.showMessageDialog(
+                    null,
+                    "We haven´t found any restaurant for " + numberOfPeople + " of people.",
+                    "No restaurant found",
+                    JOptionPane.WARNING_MESSAGE
+            );
         }
-
-        int numberOfPeople = Integer.parseInt(dinersCountTextField.getText());
-
-
 
         // TODO: Implement alternative restaurant search
     }

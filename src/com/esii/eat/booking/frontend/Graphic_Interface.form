@@ -182,14 +182,6 @@
         </constraints>
         <properties/>
       </component>
-      <component id="5b742" class="javax.swing.JLabel" binding="table_booked_message">
-        <constraints>
-          <grid row="5" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Table(s) booked!"/>
-        </properties>
-      </component>
     </children>
   </grid>
 </form>
