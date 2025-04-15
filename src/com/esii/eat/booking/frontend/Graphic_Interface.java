@@ -214,22 +214,15 @@ public class Graphic_Interface extends JFrame {
             int response = JOptionPane.showConfirmDialog(null, "The selected restaurant is full\n" + "¿Do you want to reserve in the alternative one \"" + alternative.getName() + "\"?",
                     "Alternative restaurant found", JOptionPane.YES_NO_OPTION);
 
+            String new_name = JOptionPane.showInputDialog(null, "Please enter the name for the reservation: ", "Reservation", JOptionPane.PLAIN_MESSAGE);
+
             if (response == JOptionPane.YES_OPTION) {
-                boolean reserved = gourmetChain.reserveRestaurant(numberOfPeople, alternative.getName(), reservationName);
+
+                boolean reserved = gourmetChain.reserveRestaurant(numberOfPeople, alternative.getName(), new_name);
                 if (reserved) {
-                    JOptionPane.showMessageDialog(
-                            null,
-                            "Confirmed resevation in: \"" + alternative.getName() + "\"",
-                            "Confirmed reservation",
-                            JOptionPane.INFORMATION_MESSAGE
-                    );
+                    JOptionPane.showMessageDialog(null, "Confirmed resevation in: \"" + alternative.getName() + "\"", "Confirmed reservation", JOptionPane.INFORMATION_MESSAGE);
                 } else {
-                    JOptionPane.showMessageDialog(
-                            null,
-                            "The reservation cannot be done.",
-                            "Error",
-                            JOptionPane.ERROR_MESSAGE
-                    );
+                    JOptionPane.showMessageDialog(null, "The reservation cannot be done.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
         } else {
